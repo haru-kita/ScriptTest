@@ -25,7 +25,7 @@ public class Boss
     // 魔法用の関数
     public void Magic(int num)
     {
-            if(mp <= 5)
+            if(mp < 5)
             {
             UnityEngine.Debug.Log( "MPが足りないため、魔法が使えない。");
             }
@@ -45,7 +45,7 @@ public class ScriptTest : MonoBehaviour
     void Start()
     {
         // Bossクラスの変数を宣言してインスタンスを代入
-        Boss lastboss = new Boss ();
+        Boss lastboss = new Boss();
 
         // 攻撃用の関数を呼び出す
         lastboss.Attack();
@@ -54,7 +54,10 @@ public class ScriptTest : MonoBehaviour
         lastboss.Defence(3);
 
         // 魔法用の関数を呼び出す
-        lastboss.Magic(10);
+        for(int i = 0; i < 11; i++)
+        {
+            lastboss.Magic(5);
+        }
     }
 
     // Update is called once per frame
